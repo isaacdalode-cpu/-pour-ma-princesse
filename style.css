@@ -1,0 +1,358 @@
+
+/* =====================================
+   POUR MA PRINCESSE ❤️
+   DESIGN ROMANTIQUE
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff7ca5;
+    --dark-pink: #e84d82;
+    --light-pink: #fff0f5;
+    --white: #ffffff;
+    --text: #754052;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(
+        135deg,
+        #ffe4ec,
+        #ffd1df,
+        #fff0f5,
+        #ffc4d8
+    );
+    background-size: 300% 300%;
+    animation: backgroundMove 12s ease infinite;
+    color: var(--text);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* FOND ANIMÉ */
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ACCUEIL */
+
+.welcome-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    padding: 55px 30px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 35px;
+    box-shadow: 0 20px 70px rgba(183, 73, 112, 0.15);
+    backdrop-filter: blur(15px);
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.small-heart {
+    font-size: 65px;
+    color: #f15b91;
+    animation: heartbeat 1.5s infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+}
+
+.subtitle {
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: #bd6885;
+    margin-bottom: 15px;
+}
+
+.welcome-content h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 8vw, 75px);
+    color: #d94d7e;
+    margin-bottom: 20px;
+    text-shadow: 0 5px 20px rgba(217, 77, 126, 0.15);
+}
+
+.welcome-text {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 450px;
+    margin: 0 auto 30px;
+}
+
+#openLetter {
+    padding: 17px 30px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #f65d91, #d83f76);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(216, 63, 118, 0.3);
+    transition: 0.3s ease;
+}
+
+#openLetter:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(216, 63, 118, 0.4);
+}
+
+#openLetter span {
+    margin-left: 8px;
+}
+
+.signature {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #b56b85;
+    font-style: italic;
+}
+
+/* CŒURS FLOTTANTS */
+
+.floating-hearts {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.heart-particle {
+    position: absolute;
+    bottom: -50px;
+    color: rgba(225, 68, 122, 0.45);
+    animation: floatHeart linear forwards;
+    pointer-events: none;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.6);
+        opacity: 0;
+    }
+    15% { opacity: 1; }
+    85% { opacity: 0.8; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg) scale(1.3);
+        opacity: 0;
+    }
+}
+
+/* LETTRE */
+
+.letter-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 18px;
+    animation: appear 1s ease;
+}
+
+.letter-container {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    padding: 55px 50px;
+    background: #fffdfb;
+    border-radius: 8px;
+    box-shadow: 0 20px 70px rgba(133, 57, 84, 0.2);
+    border: 1px solid #f8dce5;
+}
+
+.letter-decoration {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 58px;
+    height: 58px;
+    background: #ed5a89;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 30px;
+    box-shadow: 0 5px 15px rgba(237, 90, 137, 0.3);
+}
+
+.letter-date {
+    text-align: center;
+    color: #bd8195;
+    letter-spacing: 2px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.letter-container h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(27px, 5vw, 40px);
+    text-align: center;
+    color: #d94d7e;
+    margin-bottom: 35px;
+}
+
+.letter-body {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 2;
+    color: #72505c;
+    white-space: pre-line;
+    min-height: 180px;
+}
+
+.letter-signature {
+    margin-top: 35px;
+    line-height: 2;
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: #a96b80;
+}
+
+.letter-signature strong {
+    display: block;
+    font-size: 22px;
+    color: #d94d7e;
+}
+
+.finish-button {
+    display: block;
+    margin: 35px auto 0;
+    padding: 15px 25px;
+    border-radius: 40px;
+    color: white;
+    background: linear-gradient(135deg, #f65d91, #d83f76);
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.finish-button:hover {
+    transform: scale(1.05);
+}
+
+/* MESSAGE FINAL */
+
+.final-screen {
+    min-height: 100vh;
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: appear 1.2s ease;
+}
+
+.final-heart {
+    font-size: 110px;
+    color: #ed4f84;
+    animation: heartbeat 1.5s infinite;
+    filter: drop-shadow(0 10px 20px rgba(237, 79, 132, 0.3));
+    margin-bottom: 25px;
+}
+
+.final-screen h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 7vw, 65px);
+    color: #d94d7e;
+    margin-bottom: 25px;
+}
+
+.final-screen p {
+    max-width: 600px;
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+.final-screen h3 {
+    font-family: Georgia, serif;
+    font-size: clamp(25px, 5vw, 38px);
+    color: #d94d7e;
+    margin-top: 35px;
+}
+
+.final-screen .final-signature {
+    margin-top: 25px;
+    font-style: italic;
+    color: #b56b85;
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 600px) {
+
+    .welcome-content {
+        padding: 45px 20px;
+        border-radius: 25px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .welcome-text {
+        font-size: 16px;
+    }
+
+    .letter-container {
+        padding: 50px 23px 35px;
+    }
+
+    .letter-body {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .final-heart {
+        font-size: 85px;
+    }
+}
